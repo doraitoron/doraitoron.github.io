@@ -5,6 +5,27 @@ function setup(){
 
 function draw(){
 	background(33);
-	fill(255);
-	circle(width/2, height/2, 100);
+	let date = new Date();
+  background(220);
+  // フォントを変える
+  textFont('oswald');
+
+  // 文字の大きさ
+  textSize(80);
+  var m="";
+  var s="";
+  var ziho=[16,10,"~",35];
+  
+  if(date.getMinutes()<10){
+     m="0";
+     }else{
+       m="";
+     }
+  if(date.getSeconds()<10){
+     s="0";
+     }else{
+       s="";
+     }
+  text(date.getHours()+":"+m+date.getMinutes()+":"+s+date.getSeconds(),0,200)
+  
 }
